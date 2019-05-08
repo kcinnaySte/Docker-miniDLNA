@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  dlna:
+    build: ${SOURCEPATH}/build
+    volumes:
+      - ${SOURCEPATH}/Music:/opt/Music
+      - ${SOURCEPATH}/Videos:/opt/Videos
+      - ${SOURCEPATH}/Pictures:/opt/Pictures
+    network_mode: "host"
+    ports:
+      - 8080:8080
+      - 1900:1900
